@@ -1,0 +1,20 @@
+public class UseCase9RecursivePalindromeCheckerApp {
+
+    public static void main(String[] args) {
+        String input = "madam";
+        boolean isPalindrome = checkString(input, 0, input.length() - 1);
+
+        System.out.println("Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome);
+    }
+
+    private static boolean checkString(String s, int start, int end) {
+        if (start >= end) {
+            return true;
+        }
+        if (s.charAt(start) != s.charAt(end)) {
+            return false;
+        }
+        return checkString(s, start + 1, end - 1);
+    }
+}
